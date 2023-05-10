@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreign Exchange Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <section id="flashed-messages">
+        {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+        {% endfor %}
+    </section>
+    <section id="converter">
+        <h1>Currency Converter</h1>
+        <form method="POST" action="/convert">
+            <label>From Currency:</label>
+            <input type="text" name="from_currency" maxlength="3" required>
+            <br><br>
+            <label>To Currency:</label>
+            <input type="text" name="to_currency" maxlength="3" required>
+            <br><br>
+            <label>Amount:</label>
+            <input type="text" name="amount" required>
+            <br><br>
+            <input type="submit" value="Convert">
+        </form>
+    </section>
+</body>
+</html>
